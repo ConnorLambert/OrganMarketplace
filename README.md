@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dependencies
+
+This project relies on a few different libraries. To download all dependencies, cd into the directory after cloning the repository and run: npm install --save
+
 ## Available Scripts
 
 In the project directory, you can run:
