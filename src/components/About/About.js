@@ -10,7 +10,7 @@ class About extends Component {
         <Container>
           <Row>
             <Col>
-              <h4> Orgazon was built by a team of dedicated students... </h4>
+              <h4> The faces of Orgazon: </h4>
             </Col>
           </Row>
           <Row>

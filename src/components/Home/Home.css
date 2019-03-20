@@ -1,5 +1,6 @@
 .jumbotron {
-  background-image: url("./homeJumbotronBackground.png");
+  background-image: url("./homeJumbotronImage.jpg");
+  background-size: cover;
   color: white;
   background-repeat: round;
 }

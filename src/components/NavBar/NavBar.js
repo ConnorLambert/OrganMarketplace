@@ -1,17 +1,11 @@
 import React, {Component} from 'react';
-import { Collapse,
-         Navbar,
-         NavbarToggler,
+import { Navbar,
          NavbarBrand,
          Nav,
          NavItem,
-         NavLink,
-         UncontrolledDropdown,
-         DropdownToggle,
-         DropdownMenu,
-         DropdownItem,
-         Container,
-         Button } from 'reactstrap';
+         NavLink } from 'reactstrap';
+//Below is a comment-command to stop React from giving us a warning that Route and Link aren't being used, they are just not directly and are required imports for functionality
+//eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import brandLogo from './logo.png';
 
@@ -34,10 +28,10 @@ class NavBar extends Component {
     return (
       <div>
       <Navbar color="dark" dark expand="xs">
-        <NavbarBrand className="mr-auto" href="/"> <img src={brandLogo} width="30" height="30" className="d-inline-block align-top" alt="Orgazon!"/></NavbarBrand>
+        <NavbarBrand className="mr-auto" href="/"> <img src={brandLogo} width="30" height="30" className="d-inline-block align-top" alt="Orgazon!"/> Orgazon </NavbarBrand>
           <Nav navbar>
             <NavItem>
-              <NavLink tag={Link} to="/login" id="navLink"> Login </NavLink>
+              <NavLink className="linkText active" tag={Link} to="/login"> Login </NavLink>
             </NavItem>
 
           </Nav>
