@@ -13,7 +13,7 @@ import { Collapse,
          Container,
          Button } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import brandLogo from './logo.svg';
+import brandLogo from './logo.png';
 
 class NavBar extends Component {
   constructor(props) {
@@ -37,15 +37,11 @@ class NavBar extends Component {
         <NavbarBrand className="mr-auto" href="/"> <img src={brandLogo} width="30" height="30" className="d-inline-block align-top" alt="Orgazon!"/></NavbarBrand>
           <Nav navbar>
             <NavItem>
-              <NavLink tag={Link} to="/About"> About </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/login"> Login </NavLink>
+              <NavLink tag={Link} to="/login" id="navLink"> Login </NavLink>
             </NavItem>
 
           </Nav>
       </Navbar>
-      <br/>
       </div>
     );
   }
