@@ -30,6 +30,9 @@ class NavBar extends Component {
       <Navbar color="dark" dark expand="xs">
         <NavbarBrand className="mr-auto" href="/"> <img src={brandLogo} width="30" height="30" className="d-inline-block align-top" alt="Orgazon!"/> Orgazon </NavbarBrand>
           <Nav navbar>
+          <NavItem>
+            <NavLink className="linkText active" tag={Link} to="/data"> Data </NavLink>
+          </NavItem>
             <NavItem>
               <NavLink className="linkText active" tag={Link} to="/login"> Login </NavLink>
             </NavItem>
