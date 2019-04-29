@@ -29,7 +29,7 @@ router.get('/:id', function (req, res) {
   if (id != null)
   {
     pool.getConnection(function(err1, connection) {
-      query = 'SELECT * FROM txf_li_m WHERE TRR_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
+      query = 'SELECT * FROM cand_liin_m WHERE PX_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
       console.log(query)
 
       connection.query(query, function (err2, data) {

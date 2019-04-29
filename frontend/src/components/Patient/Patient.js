@@ -10,7 +10,7 @@ class Patient extends Component {
   }
 
   grabData() {
-    fetch("http://localhost:3001/patient/13")
+    fetch("http://localhost:3001/patient/1241007")
         .then(res => res.json())
         // .then(res => console.log(res))
         .then(res => this.setState({ data: res }))
