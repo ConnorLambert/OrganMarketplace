@@ -7,6 +7,7 @@ import NavBar from './components/NavBar/NavBar';
 import About from './components/About/About';
 import Login from './components/Login/Login';
 import Data from './components/Data/Data';
+import Patient from './components/Patient/Patient';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/about" component={About}/>
           <Route path="/login" component={Login}/>
           <Route path="/data" component={Data}/>
+          <Route path="/patient" component={Patient}/>
         </div>
       </Router>
     );

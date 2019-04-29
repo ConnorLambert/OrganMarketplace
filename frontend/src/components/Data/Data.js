@@ -17,6 +17,7 @@ class Data extends Component {
 
   componentWillMount() {
         this.grabData();
+        console.log(this.state.data)
   }
 
 

@@ -14,6 +14,7 @@ export default class Home extends Component {
           <hr className="my-2"/>
           <Button color="info" tag={Link} to="/About"> About Us </Button> &nbsp;
           <Button color="info" tag={Link} to="/Data"> Data </Button>
+          <Button color="info" tag={Link} to="/Patient"> Data </Button>
         </Jumbotron>
     )
   }
