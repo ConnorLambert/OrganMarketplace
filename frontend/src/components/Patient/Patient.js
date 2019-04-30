@@ -10,7 +10,9 @@ class Patient extends Component {
   }
 
   grabData() {
-    fetch("http://localhost:3001/patient/1241007")
+    var current_url = window.location.href
+    console.log(current_url)
+    fetch(current_url)
         .then(res => res.json())
         // .then(res => console.log(res))
         .then(res => this.setState({ data: res }))

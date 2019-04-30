@@ -15,11 +15,7 @@ var pool = mysql.createPool({
 var id = null;
 console.log(id)
 
-router.get('/:id', function (req, res) {
-
-
-  console.log('69')
-  // res.send(req.params)
+router.get('/candidate/:id', function (req, res) {
 
   id = (req.params)
   console.log(id)
@@ -53,6 +49,73 @@ router.get('/:id', function (req, res) {
 
 })
 
+router.get('/livedonor/:id', function (req, res) {
+
+  id = (req.params)
+  console.log(id)
+
+  console.log(id != null)
+
+  if (id != null)
+  {
+    pool.getConnection(function(err1, connection) {
+      query = 'SELECT * FROM donor_live_m WHERE PERS_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
+      console.log(query)
+
+      connection.query(query, function (err2, data) {
+        if (err2) {
+          console.log(err2)
+          throw err2
+        }
+
+        console.log(data[0])
+        res.send(data[0])
+        console.log('here')
+
+        connection.release()
+
+      })
+
+    })
+
+
+  }
+
+})
+
+router.get('/deceaseddonor/:id', function (req, res) {
+
+  id = (req.params)
+  console.log(id)
+
+  console.log(id != null)
+
+  if (id != null)
+  {
+    pool.getConnection(function(err1, connection) {
+      query = 'SELECT * FROM donor_deceased_m WHERE PERS_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
+      console.log(query)
+
+      connection.query(query, function (err2, data) {
+        if (err2) {
+          console.log(err2)
+          throw err2
+        }
+
+        console.log(data[0])
+        res.send(data[0])
+        console.log('here')
+
+        connection.release()
+
+      })
+
+    })
+
+
+  }
+
+})
 
 
 module.exports = router;
