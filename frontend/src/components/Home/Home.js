@@ -25,11 +25,13 @@ export default class Home extends Component {
           <hr className="my-2"/>
           <hr className="my-2"/>
           <Button color="info" tag={Link} to="/About"> About Us </Button> &nbsp;
-          <Button color="info" tag={Link} to="/Data"> Data </Button>
-          <Button color="info" tag={Link} to="/Patient/livedonor/3605829"> Live Donor </Button>
-          <Button color="info" tag={Link} to={donor_url}> Live Donor Dynamic</Button>
-          <Button color="info" tag={Link} to={candidate_url}> Candidate </Button>
-          <Button color="info" tag={Link} to={donor_deceased_url}>Deceased Donor </Button>
+          <Button color="info" tag={Link} to="/Data"> Data </Button>&nbsp;
+          <Button color="info" tag={Link} to="/Patient/livedonor/3605829"> Live Donor </Button>&nbsp;
+          <Button color="info" tag={Link} to={donor_url}> Live Donor Dynamic</Button>&nbsp;
+          <Button color="info" tag={Link} to={candidate_url}> Candidate </Button>&nbsp;
+          <Button color="info" tag={Link} to={donor_deceased_url}>Deceased Donor </Button>&nbsp;
+          <br/><br/>
+          <Button color="info" tag={Link} to="/Search"> Search</Button>
         </Jumbotron>
     )
   }

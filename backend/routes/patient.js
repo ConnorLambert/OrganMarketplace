@@ -15,6 +15,7 @@ var pool = mysql.createPool({
 var id = null;
 console.log(id)
 
+
 router.get('/candidate/:id', function (req, res) {
 
   id = (req.params)
@@ -59,7 +60,7 @@ router.get('/livedonor/:id', function (req, res) {
   if (id != null)
   {
     pool.getConnection(function(err1, connection) {
-      query = 'SELECT * FROM donor_live_m WHERE PERS_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
+      query = 'SELECT * FROM donor_live_m WHERE DONOR_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
       console.log(query)
 
       connection.query(query, function (err2, data) {
@@ -93,7 +94,7 @@ router.get('/deceaseddonor/:id', function (req, res) {
   if (id != null)
   {
     pool.getConnection(function(err1, connection) {
-      query = 'SELECT * FROM donor_deceased_m WHERE PERS_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
+      query = 'SELECT * FROM donor_deceased_m WHERE DONOR_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
       console.log(query)
 
       connection.query(query, function (err2, data) {
