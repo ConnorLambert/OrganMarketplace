@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row } from 'reactstrap';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Route, Redirect } from 'react-router'
 
 
 class Patient extends Component {
@@ -23,12 +26,30 @@ class Patient extends Component {
         this.grabData();
   }
 
+  renderRedirect(url) {
+    console.log(url)
+    return <Redirect to={"/search"}/>
+  }
+
 
   render() {
     var array = this.state.data
+    var url;
+    if (this.state.data.length !== 0 && ("DON_FUNCTN_STAT") in this.state.data === true){
+      url = "/export" + "/livedonor/" + this.state.data['DONOR_ID'];
+    }
+    else if (this.state.data.length !== 0 && ("DON_DEATH_MECH") in this.state.data === true){
+      url = "/export" + "/deceaseddonor/" + this.state.data['DONOR_ID'];
+    }
+    else if (this.state.data.length !== 0 && ("CAN_ABO") in this.state.data === true){
+      url = "/export" + "/candidate/" + this.state.data['PX_ID'];
+    }
+    var fullUrl = "localhost:3001" + url;
+    console.log(url);
     // var record = array.map();
     console.log(array)
     return (
+
       <div className="aboutContent" topw>
         <br/>
         <Container>
@@ -51,6 +72,8 @@ class Patient extends Component {
           </table>
           </Row>
         </Container>
+        <br/><br/>
+        <Button color="info" onClick={() => window.open(fullUrl)}>Export </Button>&nbsp;
       </div>
     );
   }
