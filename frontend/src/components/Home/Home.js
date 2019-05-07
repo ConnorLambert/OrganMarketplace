@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Jumbotron, Button, Row, Col, Container, Table} from 'reactstrap';
+import { Jumbotron, Button, Row, Col, Table} from 'reactstrap';
 import './Home.css'
 
 
@@ -16,7 +16,7 @@ export default class Home extends Component {
           <Button color="info" tag={Link} to="/About"> About Us </Button> &nbsp;
         </Jumbotron>
         <Row>
-          <Col xs="3"><h1>Statistics</h1></Col>
+          <Col xs="10"><h1>Statistics</h1></Col>
         </Row>
         <Table hover>
        <thead>

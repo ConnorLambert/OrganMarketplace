@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Col, Row, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import vinceVaughn from "./vinceVaughn.jpg";
 import rachel from "./rachel.JPG";
+import connor from "./connor.PNG";
 
 class About extends Component {
   render() {
@@ -17,11 +18,11 @@ class About extends Component {
           <Row>
             <Col>
               <Card>
-                <CardImg top width="100%" src={vinceVaughn}/>
+                <CardImg top width="100%" src={connor}/>
                 <CardBody>
                   <CardTitle> Connor Lambert </CardTitle>
                   <CardSubtitle> -UI Design- </CardSubtitle>
-                  <CardText> Insert something later that looks good I guess, hobbies or some stuff, enough to make it look filled. </CardText>
+                  <CardText> Connor is a graduating senior at Southern Miss. He has a dog. </CardText>
                   <Button color="info" href="https://github.com/ConnorLambert"> Github </Button>
                 </CardBody>
               </Card>
