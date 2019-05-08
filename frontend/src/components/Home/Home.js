@@ -9,14 +9,6 @@ export default class Home extends Component {
 
     //example showing how variables can be used to create URLs and have the backend pull records
     //based off of the URL
-    var donor_id = "3622031";
-    var donor_url = "/Patient/livedonor/" + donor_id
-
-    var candidate_id = "1235470";
-    var candidate_url = "/Patient/candidate/" + candidate_id
-
-    var donor_deceased_id = "8000011";
-    var donor_deceased_url = "/Patient/deceaseddonor/" + donor_deceased_id
 
     return (
       <div>

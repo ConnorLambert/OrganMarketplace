@@ -1,54 +1,34 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'reactstrap';
-
+import { Container, Row, Col } from 'reactstrap';
+import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Route, Redirect } from 'react-router'
 
 class Data extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = { data: []};
-  }
-
-  grabData() {
-    fetch("http://localhost:3001/data")
-        .then(res => res.json())
-        .then(res => this.setState({ data: res }));
-  }
-
-  componentWillMount() {
-        this.grabData();
-        console.log(this.state.data)
-  }
-
 
 render() {
   return (
     <div className="aboutContent" topw>
-      <br/>
       <Container>
-        <Row>
-          <table>
-            <thead>
-              <tr>
-                <th> Person ID </th>
-                <th> Followup ID </th>
-                <th> Weight(KG) </th>
-                <th> Hospitalizations </th>
-                <th> Organ Type </th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.data.map(member =>
-                <tr key={member.PERS_ID}>
-                  <td>{member.PERS_ID} </td>
-                  <td>{member.TRR_FOL_ID} </td>
-                  <td>{member.TFL_WGT_KG} </td>
-                  <td>{member.TFL_HOSP} </td>
-                  <td>{member.ORG_TY} </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+      <br/><br/>
+      <legend>Export Records</legend>
+      <br/><br/>
+      <Row>
+        <Col>
+          <Button color="info" onClick={() => window.open("localhost:3001/export/cand_liin_m")} >Candidate </Button>&nbsp;
+        </Col>
+        <Col>
+          <Button color="info" onClick={() => window.open("localhost:3001/export/donor_live_m")} >Live Donor </Button>&nbsp;
+        </Col>
+        <Col>
+          <Button color="info" onClick={() => window.open("localhost:3001/export/donor_deceased_m")}  >Deceased Donor</Button>&nbsp;
+        </Col>
+        <Col>
+          <Button color="info" onClick={() => window.open("localhost:3001/export/tx_li_m")} >Transfers </Button>&nbsp;
+        </Col>
+        <Col>
+          <Button color="info" onClick={() => window.open("localhost:3001/export/txf_li_m")} >Transfer Follow-up </Button>&nbsp;
+        </Col>
         </Row>
       </Container>
     </div>

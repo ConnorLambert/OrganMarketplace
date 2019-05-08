@@ -110,6 +110,7 @@ router.get('/deceaseddonor/:id', function (req, res) {
       query = 'SELECT * FROM donor_deceased_m WHERE DONOR_ID = ' + '\'' + id['id'] + '\'' + ' LIMIT 30'
       console.log(query)
 
+      //grab patient data from main table
       connection.query(query, function (err2, data) {
         if (err2) {
           console.log(err2)

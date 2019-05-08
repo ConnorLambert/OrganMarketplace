@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Route, Redirect } from 'react-router'
@@ -53,27 +53,27 @@ class Patient extends Component {
       <div className="aboutContent" topw>
         <br/>
         <Container>
-          <Row>
-          <table>
-            <thead>
-              <tr>
-                {Object.keys(array).map(key =>
-                  <th>{key}</th>
-                )}
-              </tr>
-            </thead>
-            <tbody>
-            <tr>
-              {Object.keys(array).map(key =>
-                  <td>{array[key]} </td>
-              )}
-              </tr>
-            </tbody>
-          </table>
-          </Row>
+          <Col>
+            <Button color="info" onClick={() => window.open(fullUrl)}>Export </Button>&nbsp;
+          </Col>
+          <Col>
+            <table>
+              <thead>
+                  {Object.keys(array).map(function(key) {
+                    return [
+                      <tr>
+                      <th key='a'>{key} </th>
+                      <td key='b'>{array[key]} </td>
+                      </tr>
+                    ]
+                  }
+                  )}
+              </thead>
+            </table>
+          </Col>
         </Container>
         <br/><br/>
-        <Button color="info" onClick={() => window.open(fullUrl)}>Export </Button>&nbsp;
+
       </div>
     );
   }

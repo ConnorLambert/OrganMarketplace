@@ -14,9 +14,18 @@ var pool = mysql.createPool({
   database : 'orgazon'
 });
 
+router.get('/:type', function (req, res) {
 
-var id = null;
-console.log(id)
+  console.log("here")
+  type = (req.params.type)
+  console.log(type)
+
+  filename = type + ".csv";
+
+  res.download(filename);
+
+
+})
 
 router.get('/:type/:id', function (req, res) {
   type = (req.params.type)
