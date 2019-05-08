@@ -1,26 +1,66 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+import { Button, Input, Container, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Route, Redirect } from 'react-router';
 
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: ''
+    };
+
+    this.onChange = this.onChange.bind(this);
+  }
+
+  submitForm = () => {
+    var data = this.state
+    console.log(data);
+      return fetch('/login', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(function(res) {
+        console.log(res.status)
+        debugger;
+        if (res.status === 200) {
+          return <Redirect to="/"/>
+        }
+      })
+  }
+
+  onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
   render() {
+    const {email, password} = this.state;
+
     return(
-      <Form>
-        <FormGroup>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="Enter username" />
-          </Col>
-        </FormGroup>
-        <FormGroup>
-        <Col sm="12" md={{ size: 6, offset: 3 }}>
-          <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="Enter password" />
-          </Col>
-        </FormGroup>
-        <Button tag={Link} to="/Data">Sign in</Button>
-      </Form>
+      <div>
+        <Container>
+
+            <legend> Login </legend><br/>
+              <form>
+                <Col>
+                <label htmlFor="email"> Email: </label> &nbsp;
+                  <Input type="email" name="email" value={email} onChange={this.onChange}/>
+                </Col>
+                <Col>
+                <label htmlFor="password"> Password: </label> &nbsp;
+                  <Input type="password" name="password" value={password} onChange={this.onChange}/>
+
+                </Col>
+                <Col>
+                  &nbsp;<Button color="info" onClick={this.submitForm}> Login </Button>&nbsp;
+                </Col>
+              </form>
+        </Container>
+      </div>
     )
   }
 }

@@ -19,7 +19,6 @@ var pool = mysql.createPool({
 
 
 var id = null;
-console.log(id)
 
 router.post('/', function (req, res) {
 
@@ -59,12 +58,8 @@ router.post('/', function (req, res) {
   query += queryColumns
   query += ' ' + queryValues
 
-  console.log('here')
   id = (req.body)
-  console.log(id)
-  console.log(query)
 
-  console.log(id != null)
 
   if (id != null)
   {
@@ -73,12 +68,10 @@ router.post('/', function (req, res) {
       //grab patient data from main table
       connection.query(query, function (err2, data) {
         if (err2) {
-          console.log(err2)
           throw err2
         }
 
         res.redirect('..');
-
         connection.release()
 
       })
