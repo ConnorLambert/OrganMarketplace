@@ -25,12 +25,8 @@ class Login extends Component {
           'Content-Type': 'application/json'
         }
       })
-      .then(function(res) {
-        console.log(res.status)
-        debugger;
-        if (res.status === 200) {
-          return <Redirect to="/"/>
-        }
+      .then(res => {
+        this.props.history.push('/');
       })
   }
 
@@ -56,6 +52,7 @@ class Login extends Component {
 
                 </Col>
                 <Col>
+                  <br/>
                   &nbsp;<Button color="info" onClick={this.submitForm}> Login </Button>&nbsp;
                 </Col>
               </form>

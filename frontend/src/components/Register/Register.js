@@ -35,13 +35,8 @@ class Register extends Component {
              'Content-Type': 'application/json'
           }
         })
-        .then(function(res) {
-          console.log(res.status)
-          debugger;
-          if (res.status == 200) {
-            return <Redirect to="/"/>
-          }
-
+        .then(res => {
+          this.props.history.push('/');
         })
       }
 
@@ -56,7 +51,9 @@ class Register extends Component {
     var yearEntered = {};
     if (this.state.CAN_CITIZENSHIP >= 5) {
       yearEntered.first = <label htmlFor="CAN_YEAR_ENTRY_US">Entry Year</label>
-      yearEntered.second = <input name="CAN_YEAR_ENTRY_US" type="text" value={CAN_YEAR_ENTRY_US} onChange={this.onChange}/>
+      yearEntered.second = <br/>
+      yearEntered.third = <input name="CAN_YEAR_ENTRY_US" type="text" value={CAN_YEAR_ENTRY_US} onChange={this.onChange}/>
+      yearEntered.fourth = <br/>
     }
     // var record = array.map();
     return (
@@ -68,13 +65,15 @@ class Register extends Component {
           <legend>Patient Registration</legend><br/>
             <form>
               <label htmlFor="CAN_GENDER">Gender: </label> &nbsp;
+              <br/>
                 <select name="CAN_GENDER" value={CAN_GENDER} onChange={this.onChange}>
                   <option value=""></option>
                   <option value="M">M</option>
                   <option value="F">F</option>
-                </select>&nbsp;&nbsp;
+                </select>&nbsp;&nbsp;<br/>
 
               <label htmlFor="CAN_ABO">Bloodtype: </label> &nbsp;
+              <br/>
                 <select name="CAN_ABO" value={CAN_ABO} onChange={this.onChange}>
                   <option value=""></option>
                   <option value="A">A</option>
@@ -85,9 +84,10 @@ class Register extends Component {
                   <option value="AB">AB</option>
                   <option value="B">B</option>
                   <option value="O">O</option>
-                </select>&nbsp;&nbsp;
+                </select>&nbsp;&nbsp;<br/>
 
               <label htmlFor="CAN_RACE_SRTR">Race: </label> &nbsp;
+              <br/>
                 <select name="CAN_RACE_SRTR" value={CAN_RACE_SRTR} onChange={this.onChange}>
                   <option value=""></option>
                   <option value="ASIAN">Asian</option>
@@ -96,22 +96,28 @@ class Register extends Component {
                   <option value="NATIVE">Native American</option>
                   <option value="PACIFIC">Pacific Islander</option>
                   <option value="WHITE">White</option>
-                </select>&nbsp;&nbsp;
+                </select>&nbsp;&nbsp;<br/>
 
               <label htmlFor="CAN_ETHNICITY_SRTR">Ethnicity: </label> &nbsp;
+              <br/>
                 <select name="CAN_ETHNICITY_SRTR" value={CAN_ETHNICITY_SRTR} onChange={this.onChange}>
                   <option value=""></option>
                   <option value="LATINO">Latino</option>
                   <option value="NLATIN">Non-latino</option>
-                </select>&nbsp;&nbsp;
+                </select>&nbsp;&nbsp;<br/>
 
               <label htmlFor="CAN_MOST_RECENT_HGT_CM">Height (cm)</label> &nbsp;
+              <br/>
               <input name="CAN_MOST_RECENT_HGT_CM" type="text" value={CAN_MOST_RECENT_HGT_CM} onChange={this.onChange}/>
+              <br/>
 
               <label htmlFor="CAN_MOST_RECENT_WGT_KG">Weight (kg)</label> &nbsp;
+              <br/>
               <input name="CAN_MOST_RECENT_WGT_KG" type="text" value={CAN_MOST_RECENT_WGT_KG} onChange={this.onChange}/>
+              <br/>
 
               <label htmlFor="CAN_CITIZENSHIP">Citizenship: </label> &nbsp;
+              <br/>
                 <select name="CAN_CITIZENSHIP" value={CAN_CITIZENSHIP} onChange={this.onChange}>
                   <option value=""></option>
                   <option value="1">US Citizen</option>
@@ -120,12 +126,16 @@ class Register extends Component {
                   <option value="4">Non-US Citizen</option>
                   <option value="5">Non-US Citzen (Did Not Travel for Transplant)</option>
                   <option value="6">Non-US Citzen (Travelled for Transplant)</option>
-                </select>&nbsp;&nbsp;
+                </select>&nbsp;&nbsp;<br/>
 
                 {yearEntered.first}
                 {yearEntered.second}
+                {yearEntered.third}
+                {yearEntered.fourth}
+
 
                 <label htmlFor="CAN_PERM_STATE">State: </label> &nbsp;
+                <br/>
                   <select name="CAN_PERM_STATE" value={CAN_PERM_STATE} onChange={this.onChange}>
                     <option value=""></option>
                     <option value="AK">Alaska</option>
@@ -179,7 +189,7 @@ class Register extends Component {
                     <option value="WI">Wisconsin</option>
                     <option value="WV">West Virginia</option>
                     <option value="WY">Wyoming</option>
-                  </select>&nbsp;&nbsp;
+                  </select>&nbsp;&nbsp;<br/><br/>
 
               &nbsp;<Button color="info" onClick={this.submitForm}> Submit </Button>&nbsp;
             </form>

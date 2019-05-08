@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Col, Row, Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 import vinceVaughn from "./vinceVaughn.jpg";
+import haydern from "./haydern.jpg";
 
 class About extends Component {
   render() {
@@ -27,11 +28,11 @@ class About extends Component {
             </Col>
             <Col>
               <Card>
-                <CardImg top width="100%" src={vinceVaughn}/>
+                <CardImg top width="100%" src={haydern}/>
                 <CardBody>
-                  <CardTitle> Hayden Mclendon </CardTitle>
+                  <CardTitle> Hayden McLendon </CardTitle>
                   <CardSubtitle> -Backend Development- </CardSubtitle>
-                  <CardText> Insert something later that looks good I guess, hobbies or some stuff, enough to make it look filled. </CardText>
+                  <CardText> Hayden works downtown at a place called Vendorin and will almost certainly beat you at Smash Bros. </CardText>
                   <Button color="info" href="https://github.com/HaydernMcLendern"> Github </Button>
                 </CardBody>
               </Card>

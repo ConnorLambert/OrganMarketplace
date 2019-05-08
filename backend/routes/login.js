@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
+router.use(bodyParser.json());
+
 var mysql = require('mysql')
 var pool = mysql.createPool({
   connectionLimit: 10,
@@ -18,9 +20,11 @@ router.post('/', function(req, res) {
   var query = 'SELECT password FROM users WHERE email = ';
 
   id = (req.body)
+  console.log(req.body)
 
 if(id != null) {
-  query += req.body.email+ ';';
+  query += "\'" + req.body.email + "\'" + ';';
+  console.log(query)
   pool.getConnection(function(err1, connection) {
 
     connection.query(query, function (err2, data) {
@@ -35,7 +39,6 @@ if(id != null) {
   })
 }
 
-  res.sendStatus(200);
 })
 
 module.exports = router;

@@ -37,6 +37,9 @@ class NavBar extends Component {
              <NavLink className="linkText active" tag={Link} to="/search"> Search </NavLink>
             </NavItem>
             <NavItem>
+             <NavLink className="linkText active" tag={Link} to="/register"> Register </NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink className="linkText active" tag={Link} to="/login"> Login </NavLink>
             </NavItem>
 

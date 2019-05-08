@@ -60,6 +60,8 @@ router.post('/', function (req, res) {
 
   id = (req.body)
 
+  console.log(query)
+
 
   if (id != null)
   {
@@ -82,7 +84,7 @@ router.post('/', function (req, res) {
   }
 
 
-res.sendStatus(200);
+// res.sendStatus(200);
 })
 
 
