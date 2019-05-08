@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import Data from './components/Data/Data';
 import Patient from './components/Patient/Patient';
 import Search from './components/Search/Search';
+import Register from './components/Register/Register';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path="/data" component={Data}/>
           <Route path="/patient" component={Patient}/>
           <Route path="/search" component={Search}/>
+          <Route path="/register" component={Register}/>
         </div>
       </Router>
     );
