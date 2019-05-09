@@ -8,6 +8,7 @@ import { Navbar,
 //eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import brandLogo from './logo.png';
+import personLogo from './person.jpg'
 
 class NavBar extends Component {
   constructor(props) {
@@ -30,18 +31,22 @@ class NavBar extends Component {
       <Navbar color="dark" dark expand="xs">
         <NavbarBrand className="mr-auto" href="/"> <img src={brandLogo} width="30" height="30" className="d-inline-block align-top" alt="Orgazon!"/> Orgazon </NavbarBrand>
           <Nav navbar>
+          <NavItem>
+            <NavLink className="linkText active" tag={Link} to="/return"> </NavLink>
+          </NavItem>
             <NavItem>
-             <NavLink className="linkText active" tag={Link} to="/data"> Data </NavLink>
+             <NavLink className="linkText active" tag={Link} to="/data">  </NavLink>
             </NavItem>
             <NavItem>
-             <NavLink className="linkText active" tag={Link} to="/search"> Search </NavLink>
+             <NavLink className="linkText active" tag={Link} to="/search">  </NavLink>
             </NavItem>
             <NavItem>
-             <NavLink className="linkText active" tag={Link} to="/register"> Register </NavLink>
+             <NavLink className="linkText active" tag={Link} to="/register">  </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="linkText active" tag={Link} to="/login"> Login </NavLink>
+              <NavbarBrand className="mr-auto" href="/login"> <img src={personLogo} width="30" height="30" className="d-inline-block align-top" alt="Orgazon!"/>  </NavbarBrand>
             </NavItem>
+
 
           </Nav>
       </Navbar>

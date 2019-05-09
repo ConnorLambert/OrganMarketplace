@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Button, Nav, NavLink, NavItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 
 class Patient extends Component {
@@ -91,6 +92,11 @@ class Patient extends Component {
 
     return (
       <div className="aboutContent" topw>
+      <Nav>
+            <NavItem>
+              <NavLink className="linkText active" tag={Link} to="/return">Return</NavLink>
+            </NavItem>
+      </Nav>
         <br/>
         <Container>
           <Row>
@@ -150,6 +156,7 @@ class Patient extends Component {
             </Row>
 
         </Container>
+
       </div>
     );
   }

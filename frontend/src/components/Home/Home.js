@@ -32,15 +32,15 @@ export default class Home extends Component {
        <tbody>
          <tr>
            <td>Number of Living Transplant Donors</td>
-           <td>-</td>
+           <td>1000</td>
          </tr>
          <tr>
            <td>Number of Deceased Transplant Donors</td>
-           <td>-</td>
+           <td>1000</td>
          </tr>
          <tr>
-           <td>Number of Candidates on the Waiting List</td>
-           <td>-</td>
+           <td>Number of Transplants</td>
+           <td>1000</td>
          </tr>
        </tbody>
      </Table>

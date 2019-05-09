@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Button } from 'reactstrap';
+import { Button, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Route, Redirect } from 'react-router'
 
@@ -36,7 +36,7 @@ class Register extends Component {
           }
         })
         .then(res => {
-          this.props.history.push('/');
+          this.props.history.push('/return');
         })
       }
 
@@ -59,7 +59,12 @@ class Register extends Component {
     return (
 
       <div className="aboutContent" topw>
-        <br/>
+        
+        <Nav>
+              <NavItem>
+                <NavLink className="linkText active" tag={Link} to="/return">Return</NavLink>
+              </NavItem>
+        </Nav>
         <Container>
           <Col>
           <legend>Patient Registration</legend><br/>

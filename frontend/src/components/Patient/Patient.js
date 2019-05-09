@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Button } from 'reactstrap';
+import { Button, Nav, NavLink, NavItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Route, Redirect } from 'react-router'
 
@@ -52,6 +52,11 @@ class Patient extends Component {
 
       <div className="aboutContent" topw>
         <br/>
+        <Nav>
+              <NavItem>
+                <NavLink className="linkText active" tag={Link} to="/search">Return to Search</NavLink>
+              </NavItem>
+        </Nav>
         <Container>
           <Col>
             <Button color="info" onClick={() => window.open(fullUrl)}>Export </Button>&nbsp;
